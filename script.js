@@ -42,14 +42,20 @@ const team = [
 ];
 
 
+const output = document.getElementById('output');
+
 for (let index = 0; index < team.length; index++) {
+
     const user = team[index];
 
-    for(key in user){
-        console.log(key, ':', user[key])
+    for(const key in user){
+
+        output.append(key, user[key]);
+
     }
-
-    console.log('-----');
-
     
-}
+};
+
+
+
+
