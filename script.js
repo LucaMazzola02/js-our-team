@@ -50,7 +50,7 @@ for (let index = 0; index < team.length; index++) {
 
     for(const key in user){
 
-        output.append(key, user[key]);
+        output.append(user[key]);
 
     }
     
