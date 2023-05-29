@@ -50,7 +50,11 @@ for (let index = 0; index < team.length; index++) {
 
     for(const key in user){
 
-        output.append(user[key]);
+        const liElement = document.createElement('li');
+
+        liElement.innerHTML = user[key];
+
+        output.appendChild(liElement);
 
     }
     
