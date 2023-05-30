@@ -42,23 +42,41 @@ const team = [
 ];
 
 
-const output = document.getElementById('output');
+const container = document.querySelector('.container');
 
 for (let index = 0; index < team.length; index++) {
 
     const user = team[index];
 
-    for(const key in user){
-
-        const liElement = document.createElement('li');
-
-        liElement.innerHTML = user[key];
-
-        output.appendChild(liElement);
-
-    }
-    
+    addTeamMemberToContainer(user.name, user.rule, user.image, container);
+   
 };
+
+
+function addTeamMemberToContainer(name, role, imageSrc, container){
+
+    if (!imageSrc.startsWith('http')){
+       imageSrc = './img/'+ imageSrc;
+    }
+ 
+    container.innerHTML += `
+
+    <div class="card-member">
+       <div class="image-wrapper">
+          <img src="${imageSrc}" alt="${name}'s picture">
+       </div>
+       <div class="card-description">
+          <h4 class="member-name">
+             ${name}
+          </h4>
+          <p class="member-role">
+             ${role}
+          </p>
+       </div>
+    </div> ` ;
+    
+ };
+ 
 
 
 
